@@ -19,6 +19,7 @@ app_user_behaviors_analysis/
 ├── sql/                 # MySQL 建表、业务查询 SQL 脚本
 ├── .gitignore           # Git 忽略配置
 ├── LICENSE
+|—— requirements.txt
 └── README.md
 
 
