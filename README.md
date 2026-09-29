@@ -1,45 +1,51 @@
-# 电商用户行为数据分析
-电商用户行为数据集，采用 Python + MySQL + PowerBI 完成完整用户分析。
+# APP 用户行为数据分析
+APP 用户行为数据分析项目 | 漏斗转化、留存分析、RFM 用户分群、Python + SQL + PowerBI可视化
 
-## 项目简介
-使用Python完成数据清洗、特征加工、RFM用户指标计算、用户流失标签构建；
-MySQL存储数据，编写SQL查询用户活跃、转化、用户价值指标；
-PowerBI搭建可视化仪表盘，完成DAU趋势、用户转化漏斗、RFM用户分层可视化。
+## 📖 项目简介
+本项目基于APP用户行为日志，完成从原始数据清洗、SQL指标计算、Python建模分析，到PowerBI可视化报表搭建全流程。
+核心分析目标：
+1. 构建用户转化漏斗，分析各环节流失情况
+2. RFM模型对用户进行价值分层，实现用户分群运营
+3. 统计DAU时序变化，观察用户活跃度趋势
+4. 挖掘特征重要性，定位影响用户留存的关键因素
 
-## 项目结构
+## 📁 项目结构
 app_user_behaviors_analysis/
-├─ raw_data/          # 原始数据集，大文件不上传
-├─ clean_data/        # Python 清洗后的中间数据，不上传
-├─ powerbi/           # PowerBI 工程文件与仪表盘截图
-│  ├─ ecommerce_analysis.pbix
-│  └─ pics/
-├─ analysis.py        # Python：数据清洗、RFM、流失特征计算
-├─ mysql_script.sql   # MySQL 建表、业务查询 SQL 脚本
-├─ requirements.txt   # Python 依赖包
-└─ .gitignore         # Git 忽略配置
+├── raw_data/            # 原始数据集
+├── clean_data/          # Python 清洗后的中间数据
+├── power bi/            # PowerBI 工程文件 pbix
+├── pic/                 # 可视化导出图片
+├── analysis.py          # Python：数据清洗、RFM、流失特征计算
+├── sql/                 # MySQL 建表、业务查询 SQL 脚本
+├── .gitignore           # Git 忽略配置
+├── LICENSE
+└── README.md
 
 
+## 🛠️ 技术栈
+- 编程语言：Python（pandas, matplotlib, seaborn, scikit-learn）
+- 数据库：MySQL
+- 可视化：Matplotlib、PowerBI Desktop
+- 版本管理：Git & GitHub
 
-## 分析流程
-1. 数据预处理（Python）
-   - 缺失值、异常时间过滤、重复记录剔除
-   - 计算R/F/M指标，给用户打流失标签
-   - 输出清洗后的数据集到clean_data
+## 📊 PowerBI 可视化看板
+PowerBI报表位于 `power bi/` 目录，包含3张核心图表：
+1. 用户DAU日活跃时序折线图
+2. APP用户行为转化漏斗图
+3. RFM用户价值分群气泡散点图
 
-2. 数据存储与指标查询（MySQL）
-   - 建表导入原始用户行为数据
-   - SQL统计DAU、各环节用户量、RFM基础指标
+## 🚀 项目运行说明
+1. 将`raw_data`内原始数据导入MySQL，执行`sql/create_table.sql`建表
+2. 运行sql目录下脚本，计算漏斗指标、RFM基础指标
+3. 执行`analysis.py`完成数据建模、RFM分群与绘图
+4. 使用PowerBI Desktop打开pbix文件，加载清洗后数据，查看交互式可视化看板
 
-3. 可视化仪表盘（PowerBI）
-   - DAU日活跃趋势折线图
-   - 浏览→收藏→加购→购买转化漏斗
-   - RFM用户分层分布饼图/柱状图
+## ✨ 项目亮点
+- 完整数据分析链路：原始数据 → SQL计算指标 → Python建模 → PowerBI交互式可视化
+- 可直接用于数据分析岗简历项目，覆盖SQL、Python、BI三大高频考察技能
+- 可复现，代码、数据、报表全部开源
 
-## 环境部署
-```bash
-python -m venv venv
-# Windows
-venv\Scripts\activate
-# Mac/Linux
-source venv/bin/activate
-pip install -r requirements.txt
+## 📄 License
+MIT License
+
+
